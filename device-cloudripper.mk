@@ -154,7 +154,7 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
         PRODUCT_COPY_FILES += \
                 device/google/pantah/location/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 else
