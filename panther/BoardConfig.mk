@@ -48,3 +48,6 @@ include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/panther/proprietary/BoardConfigVendor.mk
 include device/google/pantah/sepolicy/panther-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk
+
+DEVICE_PATH := device/google/pantah
+include $(DEVICE_PATH)/$(TARGET_BOOTLOADER_BOARD_NAME)/BoardConfigLineage.mk
