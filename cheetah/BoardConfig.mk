@@ -25,3 +25,5 @@ include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/cheetah/proprietary/BoardConfigVendor.mk
 include device/google/pantah/sepolicy/cheetah-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk
+
+include device/google/pantah/cheetah/BoardConfigLineage.mk
