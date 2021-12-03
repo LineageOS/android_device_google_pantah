@@ -26,3 +26,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="cheetah-user 13 TD1A.220804.031 9071314 release-keys"
 
 BUILD_FINGERPRINT := google/cheetah/cheetah:13/TD1A.220804.031/9071314:user/release-keys
+
+$(call inherit-product, vendor/google/cheetah/cheetah-vendor.mk)

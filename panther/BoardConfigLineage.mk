@@ -5,3 +5,5 @@
 #
 
 include device/google/pantah/BoardConfigLineage.mk
+
+include vendor/google/panther/BoardConfigVendor.mk
