@@ -301,3 +301,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
+
+# HBM
+PRODUCT_PACKAGES += \
+    HbmSVManagerOverlay
