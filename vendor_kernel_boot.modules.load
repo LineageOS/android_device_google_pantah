@@ -185,3 +185,6 @@ extra/snd-soc-wm-adsp.ko
 extra/st21nfc.ko
 extra/touch_bus_negotiator.ko
 extra/touch_offload.ko
+extra/focal_touch.ko
+extra/sec_touch.ko
+extra/syna_touch.ko
