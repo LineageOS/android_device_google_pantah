@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(BOARD_USES_EXYNOS_SENSORS_DUMMY), true)
+
 LOCAL_PATH := $(call my-dir)
 
 # HAL module implemenation stored in
@@ -28,3 +30,5 @@ LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../NOTICE
 LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
