@@ -3,6 +3,6 @@ package {
 }
 
 runtime_resource_overlay {
-    name: "HbmSVManagerOverlay",
+    name: "HbmSVManagerOverlayPanther",
     vendor: true
 }
