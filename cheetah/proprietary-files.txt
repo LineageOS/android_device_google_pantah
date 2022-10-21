@@ -310,7 +310,7 @@ system_ext/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so
 system_ext/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so
 system_ext/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so
 system_ext/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so
-system_ext/priv-app/OemRilService/OemRilService.apk
+system_ext/priv-app/OemRilService/OemRilService.apk;PRESIGNED
 
 # UWB
 system_ext/etc/permissions/privapp-permissions-qorvo.xml
