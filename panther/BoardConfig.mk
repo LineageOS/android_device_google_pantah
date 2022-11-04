@@ -46,5 +46,5 @@ BOARD_KERNEL_CMDLINE += swiotlb=noforce
 include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/gs201/prebuilts/BoardConfigVendor.mk
 -include vendor/google_devices/panther/proprietary/BoardConfigVendor.mk
-include device/google/pantah-sepolicy/panther-sepolicy.mk
+include device/google/pantah/sepolicy/panther-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk
