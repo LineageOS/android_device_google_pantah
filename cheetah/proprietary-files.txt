@@ -213,6 +213,7 @@ product/lib/libdmengine.so
 product/lib/libdmjavaplugin.so
 product/lib64/libdmengine.so
 product/lib64/libdmjavaplugin.so
+product/priv-app/CarrierLocation/CarrierLocation.apk;PRESIGNED
 product/priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
 product/priv-app/CarrierSettings/CarrierSettings.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
@@ -243,7 +244,9 @@ system_ext/lib64/libaptX_encoder.so
 
 # Camera extensions
 system_ext/etc/permissions/com.google.android.camera.extensions.xml
+system_ext/etc/permissions/com.google.android.camera.experimental2022_system.xml
 system_ext/framework/com.google.android.camera.extensions.jar
+system_ext/framework/com.google.android.camera.experimental2022_system.jar
 
 # Edge TPU
 system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
@@ -273,6 +276,9 @@ system_ext/lib64/libpowerstatshaldataprovider.so
 
 # NFC
 system_ext/priv-app/PixelNfc/PixelNfc.apk
+
+# QualifiedNetworksService
+system_ext/priv-app/QualifiedNetworksService/QualifiedNetworksService.apk
 
 # Permissions
 system_ext/etc/permissions/privapp-permissions-google-se.xml:system_ext/etc/permissions/privapp-permissions-google-se-lineage.xml
