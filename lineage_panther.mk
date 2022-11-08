@@ -24,8 +24,8 @@ TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=panther \
-    PRIVATE_BUILD_DESC="panther-user 13 TD1A.220804.031 9071314 release-keys"
+    PRIVATE_BUILD_DESC="panther-user 13 TD1A.221105.001 9104446 release-keys"
 
-BUILD_FINGERPRINT := google/panther/panther:13/TD1A.220804.031/9071314:user/release-keys
+BUILD_FINGERPRINT := google/panther/panther:13/TD1A.221105.001/9104446:user/release-keys
 
 $(call inherit-product, vendor/google/panther/panther-vendor.mk)
