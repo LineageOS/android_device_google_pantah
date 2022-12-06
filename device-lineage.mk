@@ -48,10 +48,15 @@ PRODUCT_PACKAGES += \
 # Codec2
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor \
+    android.hardware.media.c2@1.1.vendor:64 \
+    android.hardware.media.c2@1.2.vendor:64 \
     libacryl \
     libacryl_hdr_plugin \
     libavservices_minijail.vendor \
     libcodec2_hidl@1.0.vendor \
+    libcodec2_hidl@1.1.vendor:64 \
+    libcodec2_hidl@1.2.vendor:64 \
+    libcodec2_soft_common.vendor:64 \
     libcodec2_vndk.vendor \
     libexynosutils \
     libexynosv4l2 \
