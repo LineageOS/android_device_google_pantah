@@ -11,7 +11,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/google/pantah/aosp_panther.mk)
 $(call inherit-product, device/google/gs201/lineage_common.mk)
-$(call inherit-product, device/google/pantah/device-lineage.mk)
+
+include device/google/pantah/panther/device-lineage.mk
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
