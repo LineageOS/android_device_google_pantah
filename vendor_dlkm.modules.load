@@ -1,6 +1,5 @@
 kernel/crypto/crct10dif_common.ko
 kernel/crypto/crct10dif_generic.ko
-kernel/lib/crc-t10dif.ko
 kernel/drivers/pinctrl/pinctrl-slg51000.ko
 kernel/drivers/pinctrl/pinctrl-slg51002.ko
 kernel/drivers/soc/google/vh/kernel/mm/vh_mm.ko
@@ -28,6 +27,7 @@ kernel/drivers/hwtracing/coresight/coresight-tmc.ko
 kernel/drivers/hwtracing/coresight/coresight-funnel.ko
 kernel/drivers/hwtracing/coresight/coresight-replicator.ko
 kernel/drivers/hwtracing/coresight/coresight-etm4x.ko
+kernel/lib/crc-t10dif.ko
 extra/audiometrics.ko
 extra/bcmdhd4389.ko
 extra/bigocean.ko
@@ -47,3 +47,4 @@ extra/overheat_mitigation.ko
 extra/snd-soc-cs35l41-i2c.ko
 extra/snd-soc-cs35l45-i2c.ko
 extra/snd-soc-cs40l26.ko
+extra/wlan_ptracker.ko
