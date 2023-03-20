@@ -45,4 +45,5 @@ TARGET_KERNEL_EXT_MODULES := \
     touch/synaptics \
     uwb/kernel \
     video/gchips \
-    wlan/bcmdhd4389
+    wlan/bcmdhd4389 \
+    wlan/wlan_ptracker
