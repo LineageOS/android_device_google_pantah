@@ -1,0 +1,1 @@
+allow vendor_cccdktimesync_app hal_bluetooth_coexistence_service:service_manager find;
