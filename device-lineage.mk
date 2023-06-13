@@ -150,4 +150,4 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.5.vendor:64 \
     android.hardware.wifi@1.6.vendor:64 \
     com.google.hardware.pixel.display-V4-ndk.vendor:64 \
-    com.google.hardware.pixel.display-V5-ndk.vendor
+    com.google.hardware.pixel.display-V6-ndk.vendor
