@@ -23,6 +23,7 @@ kernel/drivers/soc/google/debug/exynos-adv-tracer.ko
 kernel/drivers/soc/google/debug/exynos-adv-tracer-s2d.ko
 kernel/drivers/soc/google/debug/pixel-boot-metrics.ko
 kernel/drivers/soc/google/debug/sjtag-driver.ko
+kernel/drivers/soc/google/debug/etm2dram.ko
 kernel/drivers/soc/google/vh/kernel/sched/vh_sched.ko
 kernel/drivers/soc/google/vh/kernel/sched/sched_tp.ko
 kernel/drivers/soc/google/vh/kernel/sched/vh_preemptirq_long.ko
