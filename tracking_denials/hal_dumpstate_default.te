@@ -1,2 +1,0 @@
-# b/263548298
-dontaudit hal_dumpstate_default sysfs:dir { read };
