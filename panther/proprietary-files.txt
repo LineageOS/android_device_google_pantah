@@ -87,11 +87,11 @@ system_ext/framework/com.google.android.camera.experimental2022_system.jar
 system_ext/framework/com.google.android.camera.extensions.jar
 
 # Edge TPU
-system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
+system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service;DISABLE_CHECKELF
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
-system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so
-system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
+system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so;MODULE=com.google.edgetpu_app_service-V2-ndk-se
+system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so;MODULE=com.google.edgetpu_vendor_service-V2-ndk-se
 
 # HBM
 system_ext/lib64/libhbmsvmanager_jni.so
@@ -149,10 +149,6 @@ system_ext/app/OemRilHookService/OemRilHookService.apk
 system_ext/etc/permissions/com.samsung.slsi.telephony.oemril.xml
 system_ext/etc/permissions/oemrilhook.xml
 system_ext/framework/oemrilhook.jar
-system_ext/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so
-system_ext/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so
-system_ext/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so
-system_ext/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so
 system_ext/priv-app/OemRilService/OemRilService.apk;PRESIGNED
 
 # VZW
