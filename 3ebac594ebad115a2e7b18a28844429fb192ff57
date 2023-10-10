@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63536373_b8a8513a",
+        "filename": "panther/proprietary-files-vendor.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2023-10-10T20:26:16Z",
+      "side": 0,
+      "message": "Add to regen-vendor.sh VENDOR_SKIP_FILES but I thought these were used, guess not?",
+      "revId": "3ebac594ebad115a2e7b18a28844429fb192ff57",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
