@@ -94,7 +94,6 @@ kernel/drivers/mfd/s2mpg12-mfd.ko
 kernel/drivers/mfd/s2mpg13-mfd.ko
 kernel/drivers/dma-buf/heaps/samsung/samsung_dma_heap.ko
 kernel/drivers/scsi/ufs/ufs-exynos-core.ko
-kernel/drivers/scsi/ufs/ufs-pixel-fips140.ko
 kernel/drivers/scsi/sg.ko
 kernel/drivers/spi/spidev.ko
 kernel/drivers/spi/spi-s3c64xx.ko
