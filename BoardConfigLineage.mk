@@ -33,8 +33,8 @@ TARGET_KERNEL_EXT_MODULES := \
     bms \
     display/samsung \
     edgetpu/janeiro/drivers/edgetpu \
-    gpu/mali_kbase \
     gpu/mali_pixel \
+    gpu/mali_kbase \
     gxp/gs201 \
     lwis \
     nfc \
