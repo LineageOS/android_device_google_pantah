@@ -17,11 +17,6 @@ product/etc/firmware/music_detector.sound_model_tflite
 product/app/PixelCameraServicesP10/PixelCameraServicesP10.apk;PRESIGNED
 product/etc/permissions/androidx.camera.extensions.impl.xml
 
-# Felica
-product/etc/felica/common.cfg
-product/etc/felica/mfm.cfg
-product/etc/felica/mfs.cfg
-
 # Hardware info
 product/etc/permissions/com.google.android.hardwareinfo.xml
 product/framework/libhwinfo.jar
@@ -115,9 +110,6 @@ system_ext/lib64/libmediaadaptor.so
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
 system_ext/priv-app/ShannonRcs/ShannonRcs.apk;PRESIGNED
-
-# Misc
-system_ext/lib64/libpowerstatshaldataprovider.so
 
 # NFC
 system_ext/priv-app/PixelNfc/PixelNfc.apk
