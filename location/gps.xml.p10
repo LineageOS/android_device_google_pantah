@@ -60,7 +60,7 @@
        CpLppeUseAgnssLocForEmptyDbh="true"
        CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
-       ReAidingIntervalSec="1200"
+       ReAidingIntervalSec="3600"
        RuntimeSwLteFilterEnable="true"
        PpsDevice="/sys/class/pps/pps0/assert_elapsed"
        SensorsMask="0x244"
@@ -93,6 +93,8 @@
        MinGpsWeekNumber="2216"
        OnChipAccMask="50"
        EnableB1C="false"
+
+       RTICacheTimeoutSec="3600"
   />
 
   <gll_features
