@@ -36,25 +36,32 @@ using aidl::android::hardware::power::stats::PowerStatsEnergyConsumer;
 
 void addDisplay(std::shared_ptr<PowerStats> p) {
     // Add display residency stats
-    std::vector<std::string> states = {
-        "Off",
-        "LP: 1440x3120@30",
-        "On: 1440x3120@10",
-        "On: 1440x3120@60",
-        "On: 1440x3120@120",
-        "HBM: 1440x3120@60",
-        "HBM: 1440x3120@120",
-        "LP: 1080x2340@30",
-        "On: 1080x2340@10",
-        "On: 1080x2340@60",
-        "On: 1080x2340@120",
-        "HBM: 1080x2340@60",
-        "HBM: 1080x2340@120"};
+    struct stat buffer;
+    if (!stat("/sys/class/drm/card0/device/primary-panel/time_in_state", &buffer)) {
+        // time_in_state exists
+        addDisplayMrr(p);
+    } else {
+        // time_in_state doesn't exist
+        std::vector<std::string> states = {
+            "Off",
+            "LP: 1440x3120@30",
+            "On: 1440x3120@10",
+            "On: 1440x3120@60",
+            "On: 1440x3120@120",
+            "HBM: 1440x3120@60",
+            "HBM: 1440x3120@120",
+            "LP: 1080x2340@30",
+            "On: 1080x2340@10",
+            "On: 1080x2340@60",
+            "On: 1080x2340@120",
+            "HBM: 1080x2340@60",
+            "HBM: 1080x2340@120"};
 
-    p->addStateResidencyDataProvider(std::make_unique<DisplayStateResidencyDataProvider>(
-            "Display",
-            "/sys/class/backlight/panel0-backlight/state",
-            states));
+        p->addStateResidencyDataProvider(std::make_unique<DisplayStateResidencyDataProvider>(
+                "Display",
+                "/sys/class/backlight/panel0-backlight/state",
+                states));
+    }
 
     // Add display energy consumer
     p->addEnergyConsumer(PowerStatsEnergyConsumer::createMeterAndEntityConsumer(
