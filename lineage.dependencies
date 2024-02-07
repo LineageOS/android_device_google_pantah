@@ -1,0 +1,11 @@
+[
+  {
+    "repository": "android_device_google_gs201",
+    "target_path": "device/google/gs201"
+  },
+  {
+    "repository": "device/google/pantah-kernels/5.10",
+    "target_path": "device/google/pantah-kernels/5.10",
+    "remote": "aosp-pantah"
+  }
+]
