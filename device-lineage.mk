@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libGralloc4Wrapper \
-    libcamera2ndk_vendor:64 \
     pixel-power-ext-V1-ndk.vendor:32
 
 # Codec2
@@ -71,6 +70,10 @@ PRODUCT_PACKAGES += \
     android.hardware.confirmationui-lib.trusty:64 \
     android.hardware.confirmationui@1.0.vendor:64 \
     libteeui_hal_support.vendor:64
+
+# Fingerprint
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -107,8 +110,17 @@ PRODUCT_PACKAGES += \
     nos_app_avb:64 \
     nos_app_identity:64 \
     nos_app_keymaster:64 \
+    nos_app_keymaster_ctdl:64 \
     nos_app_weaver:64 \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64
+
+# Radio
+PRODUCT_PACKAGES += \
+    modem_android_property_manager.vendor:32 \
+    modem_android_property_manager_impl.vendor:32 \
+    modem_clock_manager.vendor \
+    modem_clock_manager_impl.vendor \
+    modem_log_constants.vendor:32
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -122,7 +134,6 @@ PRODUCT_PACKAGES += \
 # Trusty
 PRODUCT_PACKAGES += \
     android.trusty.stats.nw.setter-cpp.vendor:64 \
-    lib_sensor_listener:64 \
     libbinder_trusty:64 \
     libtrusty_metrics:64
 
@@ -132,8 +143,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor:32 \
     android.hardware.authsecret-V1-ndk.vendor:64 \
     android.hardware.biometrics.common-V3-ndk.vendor:64 \
-    android.hardware.biometrics.face-V3-ndk.vendor:64 \
-    android.hardware.biometrics.face@1.0.vendor:64 \
     android.hardware.biometrics.fingerprint-V3-ndk.vendor:64 \
     android.hardware.gnss-V3-ndk.vendor:64 \
     android.hardware.health-V1-ndk.vendor \
