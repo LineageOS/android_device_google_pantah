@@ -48,6 +48,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPULittleClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "5000",
+        "500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUMidClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
@@ -76,6 +86,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUMidClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "20000",
+        "3000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq",
       "Values": [
@@ -101,6 +121,16 @@
         "1106000",
         "0"
       ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "20000",
+        "3000"
+      ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -137,6 +167,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUTaperedDVFSHeadroomEnable",
+      "Path": "/proc/vendor_sched/tapered_dvfs_headroom_enable",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "MIFTargetLoad",
       "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
       "Values": [
@@ -148,7 +188,7 @@
     },
     {
       "Name": "CAMUClampBoost",
-      "Path": "/proc/vendor_sched/cam_uclamp_min",
+      "Path": "/proc/vendor_sched/groups/cam/uclamp_min",
       "Values": [
         "765",
         "0"
@@ -157,7 +197,7 @@
     },
     {
       "Name": "TAUClampBoost",
-      "Path": "/proc/vendor_sched/ta_uclamp_min",
+      "Path": "/proc/vendor_sched/groups/ta/uclamp_min",
       "Values": [
         "765",
         "1",
@@ -167,7 +207,7 @@
     },
     {
       "Name": "FGUClampBoost",
-      "Path": "/proc/vendor_sched/fg_uclamp_min",
+      "Path": "/proc/vendor_sched/groups/fg/uclamp_min",
       "Values": [
         "159",
         "0"
@@ -176,7 +216,7 @@
     },
     {
       "Name": "MLUclampBoost",
-      "Path": "/proc/vendor_sched/nnapi_uclamp_min",
+      "Path": "/proc/vendor_sched/groups/nnapi/uclamp_min",
       "Values": [
           "225",
           "813"
@@ -195,7 +235,7 @@
     },
     {
       "Name": "CDPreferIdle",
-      "Path": "/proc/vendor_sched/cam_prefer_idle",
+      "Path": "/proc/vendor_sched/groups/cam/prefer_idle",
       "Values": [
         "0",
         "1"
@@ -244,7 +284,7 @@
     },
     {
       "Name": "TAPreferHighCap",
-      "Path": "/proc/vendor_sched/ta_prefer_high_cap",
+      "Path": "/proc/vendor_sched/groups/ta/prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -253,7 +293,7 @@
     },
     {
       "Name": "TAPreferIdle",
-      "Path": "/proc/vendor_sched/ta_prefer_idle",
+      "Path": "/proc/vendor_sched/groups/ta/prefer_idle",
       "Values": [
         "0",
         "1"
@@ -262,7 +302,7 @@
     },
     {
       "Name": "FGPreferIdle",
-      "Path": "/proc/vendor_sched/fg_prefer_idle",
+      "Path": "/proc/vendor_sched/groups/fg/prefer_idle",
       "Values": [
         "1",
         "0"
@@ -272,7 +312,7 @@
     },
     {
       "Name": "CDPreferHighCap",
-      "Path": "/proc/vendor_sched/cam_prefer_high_cap",
+      "Path": "/proc/vendor_sched/groups/cam/prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -635,12 +675,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "FGPreferIdle",
-      "Duration": 5000,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
@@ -656,6 +690,48 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 5000,
+      "Value": "1280"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "TAPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "FGPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
@@ -919,6 +995,18 @@
       "Node": "TNRFreq",
       "Duration": 1000,
       "Value": "664000"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "CDPreferIdle",
+      "Duration": 100,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "PMU_POLL",
+      "Duration": 100,
+      "Value": "0"
     },
     {
       "PowerHint": "GCA_CAMERA_SHOT_BIGCPU",
@@ -1634,6 +1722,36 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "572000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 0,
+      "Value": "1100"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "500"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "3000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "3000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN_LIGHT",
