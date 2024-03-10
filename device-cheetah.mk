@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Restrict the visibility of Android.bp files to improve build analysis time
+$(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
+
 TARGET_KERNEL_DIR ?= device/google/pantah-kernel
 TARGET_BOARD_KERNEL_HEADERS := device/google/pantah-kernel/kernel-headers
 
@@ -23,6 +26,8 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheetah/device-vendor-cheetah.mk)
 $(call inherit-product-if-exists, vendor/google_devices/cheetah/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersCheetah.mk)
+
+$(call inherit-product, device/google/pantah/uwb/uwb_calibration_country.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
 
@@ -106,9 +111,10 @@ PRODUCT_COPY_FILES += \
 	device/google/pantah/nfc/libnfc-nci-cheetah.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	NfcNci \
+	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
-	android.hardware.nfc-service.st
+	android.hardware.nfc-service.st \
+	NfcOverlayCheetah
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -212,6 +218,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     device/google/pantah/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
+# LE Audio Unicast Allowlist
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.leaudio.allow_list=SM-R510
+
 # Bluetooth EWP test tool
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += \
@@ -271,11 +281,18 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-include device/google/gs101/fingerprint/udfps_common.mk
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-include device/google/gs101/fingerprint/udfps_shipping.mk
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q2
 else
-include device/google/gs101/fingerprint/udfps_factory.mk
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/trunk
+endif
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
+ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
+else
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
 endif
 
 PRODUCT_PACKAGES += \
@@ -286,6 +303,13 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/24Q2
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/trunk
+endif
 
 # Location
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
@@ -310,7 +334,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=43
+    ro.vendor.build.svn=49
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -346,7 +370,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 ACTUATOR_MODEL := luxshare_ict_081545
 ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=0 \
+    persist.vendor.vibrator.hal.chirp.enabled=0 \
     ro.vendor.vibrator.hal.device.mass=0.214 \
     ro.vendor.vibrator.hal.loc.coeff=2.7 \
     persist.vendor.vibrator.hal.context.enable=false \
@@ -369,7 +393,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # RKPD
 PRODUCT_PRODUCT_PROPERTIES += \
-    remote_provisioning.enable_rkpd=true \
     remote_provisioning.hostname=remoteprovisioning.googleapis.com \
 
 ##Audio Vendor property

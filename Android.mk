@@ -26,8 +26,6 @@ LOCAL_PATH := $(call my-dir)
 # their rules should be written here.
 
 ifneq (,$(filter $(TARGET_DEVICE),cloudripper ravenclaw cheetah panther))
-  include $(call all-makefiles-under,$(LOCAL_PATH))
-
 DM_LIBS := libdmengine.so libdmjavaplugin.so
 DM_32_SYMLINKS := $(addprefix $(TARGET_OUT_PRODUCT)/priv-app/DMService/lib/arm/,$(notdir $(DM_LIBS)))
 $(DM_32_SYMLINKS): $(LOCAL_INSTALLED_MODULE)

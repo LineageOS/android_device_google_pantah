@@ -20,14 +20,18 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_ravenclaw.mk \
     $(LOCAL_DIR)/factory_ravenclaw.mk \
     $(LOCAL_DIR)/aosp_cheetah.mk \
+    $(LOCAL_DIR)/aosp_cheetah_hwasan.mk \
     $(LOCAL_DIR)/factory_cheetah.mk \
     $(LOCAL_DIR)/aosp_panther.mk \
+    $(LOCAL_DIR)/aosp_panther_hwasan.mk \
     $(LOCAL_DIR)/factory_panther.mk \
     $(LOCAL_DIR)/lineage_cheetah.mk \
     $(LOCAL_DIR)/lineage_panther.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_cloudripper-userdebug \
-    aosp_ravenclaw-userdebug \
-    aosp_cheetah-userdebug \
-    aosp_panther-userdebug
+    aosp_cloudripper-trunk_staging-userdebug \
+    aosp_ravenclaw-trunk_staging-userdebug \
+    aosp_cheetah-trunk_staging-userdebug \
+    aosp_cheetah_hwasan-trunk_staging-userdebug \
+    aosp_panther-trunk_staging-userdebug \
+    aosp_panther_hwasan-trunk_staging-userdebug
