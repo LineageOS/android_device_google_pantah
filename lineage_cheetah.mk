@@ -25,8 +25,8 @@ TARGET_SCREEN_WIDTH := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=cheetah \
-    PRIVATE_BUILD_DESC="cheetah-user 14 UQ1A.240205.002 11224170 release-keys"
+    PRIVATE_BUILD_DESC="cheetah-user 14 AP1A.240305.019.A1 11445699 release-keys"
 
-BUILD_FINGERPRINT := google/cheetah/cheetah:14/UQ1A.240205.002/11224170:user/release-keys
+BUILD_FINGERPRINT := google/cheetah/cheetah:14/AP1A.240305.019.A1/11445699:user/release-keys
 
 $(call inherit-product, vendor/google/cheetah/cheetah-vendor.mk)
