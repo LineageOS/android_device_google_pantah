@@ -75,7 +75,7 @@ extract "${MY_DIR}/proprietary-files-carriersettings.txt" "${SRC}" "${KANG}" --s
 extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 if [ -z "${SECTION}" ]; then
-    extract_firmware "${MY_DIR}/proprietary-firmware.txt" "${SRC}"
+    extract_firmware "${MY_DIR}/proprietary-firmware.txt" "${SRC}../"
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
