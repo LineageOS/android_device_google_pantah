@@ -51,5 +51,8 @@
 
     <!-- Movement should not be more than 1mm -->
     <dimen name="udfps_burn_in_offset_y">16px</dimen>
+
+    <!-- Pixel pitch of the device. um/px -->
+    <item name="pixel_pitch" format="float" type="dimen">61.0</item>
 </resources>
 

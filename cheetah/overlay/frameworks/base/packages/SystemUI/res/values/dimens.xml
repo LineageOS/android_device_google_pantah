@@ -44,5 +44,8 @@
 
     <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
     <dimen name="lock_icon_padding">60px</dimen>
+
+    <!-- Pixel pitch of the device. um/px -->
+    <item name="pixel_pitch" format="float" type="dimen">49.6</item>
 </resources>
 
