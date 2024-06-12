@@ -3,8 +3,8 @@
 # product partition
 
 # AiAi
-product/priv-app/DeviceIntelligenceNetworkPrebuilt/DeviceIntelligenceNetworkPrebuilt.apk;PRESIGNED
-product/priv-app/DevicePersonalizationPrebuiltPixel2022/DevicePersonalizationPrebuiltPixel2022.apk;PRESIGNED
+product/priv-app/DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore/DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore.apk;PRESIGNED
+product/priv-app/DevicePersonalizationPrebuiltPixel2022-v.U.14.playstore/DevicePersonalizationPrebuiltPixel2022-v.U.14.playstore.apk;PRESIGNED
 
 # Audio
 product/etc/ambient/matcher_tah.leveldb
@@ -15,7 +15,7 @@ product/etc/firmware/music_detector.sound_model_tflite
 
 # Camera extensions
 product/etc/permissions/androidx.camera.extensions.impl.xml
-product/priv-app/PixelCameraServicesP10/PixelCameraServicesP10.apk;PRESIGNED
+product/priv-app/PixelCameraServices/PixelCameraServices.apk;PRESIGNED
 
 # Felica
 product/etc/felica/common.cfg
@@ -57,7 +57,7 @@ product/lib/libdmengine.so
 product/lib/libdmjavaplugin.so
 product/lib64/libdmengine.so
 product/lib64/libdmjavaplugin.so
-product/priv-app/CarrierSettings/CarrierSettings.apk;PRESIGNED
+product/priv-app/CarrierSettings_signed_45.0.591154042/CarrierSettings_signed_45.0.591154042.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -94,7 +94,7 @@ system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 system_ext/etc/public.libraries-google.txt
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
 system_ext/lib/libedgetpu_dba.google.so
-system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so
+system_ext/lib64/com.google.edgetpu_app_service-V3-ndk.so
 system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
 system_ext/lib64/libedgetpu_dba.google.so
 
