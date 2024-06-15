@@ -34,18 +34,25 @@ using aidl::android::hardware::power::stats::PowerStatsEnergyConsumer;
 
 void addDisplay(std::shared_ptr<PowerStats> p) {
     // Add display residency stats
-    std::vector<std::string> states = {
-        "Off",
-        "LP: 1080x2400@30",
-        "On: 1080x2400@60",
-        "On: 1080x2400@90",
-        "HBM: 1080x2400@60",
-        "HBM: 1080x2400@90"};
+    struct stat buffer;
+    if (!stat("/sys/class/drm/card0/device/primary-panel/time_in_state", &buffer)) {
+        // time_in_state exists
+        addDisplayMrr(p);
+    } else {
+        // time_in_state doesn't exist
+        std::vector<std::string> states = {
+            "Off",
+            "LP: 1080x2400@30",
+            "On: 1080x2400@60",
+            "On: 1080x2400@90",
+            "HBM: 1080x2400@60",
+            "HBM: 1080x2400@90"};
 
-    p->addStateResidencyDataProvider(std::make_unique<DisplayStateResidencyDataProvider>(
-            "Display",
-            "/sys/class/backlight/panel0-backlight/state",
-            states));
+        p->addStateResidencyDataProvider(std::make_unique<DisplayStateResidencyDataProvider>(
+                "Display",
+                "/sys/class/backlight/panel0-backlight/state",
+                states));
+    }
 
     // Add display energy consumer
     p->addEnergyConsumer(PowerStatsEnergyConsumer::createMeterAndEntityConsumer(
@@ -70,20 +77,8 @@ int main() {
     addGs201CommonDataProviders(p);
     addDisplay(p);
 
-    if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-2/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-2/i2c-st21nfc/power_stats");
-    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-3/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-3/i2c-st21nfc/power_stats");
-    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-4/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-4/i2c-st21nfc/power_stats");
-    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-5/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-5/i2c-st21nfc/power_stats");
-    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-6/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-6/i2c-st21nfc/power_stats");
-    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-7/i2c-st21nfc/power_stats", &buffer)) {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-7/i2c-st21nfc/power_stats");
-    } else {
-        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-8/i2c-st21nfc/power_stats");
+    if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-8/8-0008/power_stats", &buffer)) {
+        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-8/8-0008/power_stats");
     }
     const std::string instance = std::string() + PowerStats::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(p->asBinder().get(), instance.c_str());
