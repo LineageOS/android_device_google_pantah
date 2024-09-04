@@ -162,7 +162,5 @@ system_ext/etc/permissions/privapp-permissions-qorvo.xml
 system_ext/priv-app/UwbVendorService/UwbVendorService.apk;PRESIGNED
 
 # VZW
-system_ext/etc/permissions/com.verizon.llkagent.xml
 system_ext/etc/permissions/vzw_mvs_permissions.xml
-system_ext/priv-app/LLKAgent/LLKAgent.apk
 system_ext/priv-app/MyVerizonServices/MyVerizonServices.apk;PRESIGNED
