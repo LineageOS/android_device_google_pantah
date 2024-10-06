@@ -1,0 +1,2 @@
+# Haptics
+genfscon sysfs /devices/platform/10970000.hsi2c/i2c-8/8-0042                    u:object_r:sysfs_vibrator:s0
