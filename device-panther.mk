@@ -161,10 +161,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.server.automatic_turn_on=true
 
-# Bluetooth hci_inject test tool
-PRODUCT_PACKAGES_ENG += \
-    hci_inject
-
 # Bluetooth OPUS codec
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.opus.enabled=true
@@ -179,9 +175,6 @@ PRODUCT_COPY_FILES += \
     device/google/pantah/bluetooth/bluetooth_power_limits_panther_GQML3_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GQML3_US.csv \
     device/google/pantah/bluetooth/bluetooth_power_limits_panther_GVU6C_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GVU6C_US.csv
 
-# Bluetooth SAR test tool
-PRODUCT_PACKAGES_ENG += \
-    sar_test
 # default BDADDR for EVB only
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
@@ -228,10 +221,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.ble.allow_enc_with_bredr=true
 
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_ENG += \
-    ewp_tool
-
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.firmware.selection=BCM.hcd
 
@@ -240,19 +229,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295006 \
-    persist.bluetooth.bqr.vnd_quality_mask=29 \
-    persist.bluetooth.bqr.vnd_trace_mask=0 \
-    persist.bluetooth.vendor.btsnoop=true
-else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=295006 \
     persist.bluetooth.bqr.vnd_quality_mask=16 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=false
-endif
 
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -316,28 +297,15 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+    device/google/pantah/location/lhd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+    device/google/pantah/location/scd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
     PRODUCT_COPY_FILES += \
-        device/google/pantah/location/lhd.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/pantah/location/scd.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/pantah/location/gps.6.1.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/pantah/location/gps.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
+        device/google/pantah/location/gps_user.6.1.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 else
     PRODUCT_COPY_FILES += \
-        device/google/pantah/location/lhd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/pantah/location/scd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/pantah/location/gps_user.6.1.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
+        device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
 # Set support one-handed mode
@@ -397,12 +365,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGQML3 \
     SettingsOverlayGVU6C \
     SettingsOverlayGVU6C_VN
-
-# eng specific
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-    PRODUCT_COPY_FILES += \
-        device/google/gs201/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
-endif
 
 # Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \
@@ -471,10 +433,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Panther: 0x4109
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.device_id.product_id=16649
-
-# ETM
-ifneq (,$(RELEASE_ETM_IN_USERDEBUG_ENG))
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-$(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
-endif
-endif
