@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Restrict the visibility of Android.bp files to improve build analysis time
-$(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
-
 ifdef RELEASE_GOOGLE_PANTHER_RADIO_DIR
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_PANTHER_RADIO_DIR)
 endif
@@ -34,13 +31,6 @@ TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_PANTHER_VERSION)
 # Keeps flexibility for kasan and ufs builds
 TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_PANTHER_DIR)
 TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_PANTHER_DIR)/kernel-headers
-
-$(call inherit-product-if-exists, vendor/google_devices/pantah/prebuilts/device-vendor-panther.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/panther/device-vendor-panther.mk)
-$(call inherit-product-if-exists, vendor/google_devices/panther/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersPanther.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
 
@@ -278,11 +268,6 @@ PRODUCT_SOONG_NAMESPACES += \
     device/google/pantah/powerstats/panther \
     device/google/pantah
 
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
-
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
@@ -292,9 +277,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay2022_P10
 
 PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
-
-# Trusty liboemcrypto.so
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
 PRODUCT_COPY_FILES += \

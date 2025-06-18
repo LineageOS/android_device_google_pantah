@@ -14,7 +14,6 @@
 # limitations under the License.
 
 # UWB - ultra wide band
-$(call inherit-product-if-exists, vendor/qorvo/uwb/uwb.mk)
 
 LOCAL_UWB_CAL_DIR=device/google/pantah/uwb
 

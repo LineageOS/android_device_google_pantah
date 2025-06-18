@@ -34,9 +34,7 @@ USES_DEVICE_GOOGLE_CLOUDRIPPER := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
 
 include device/google/gs201/BoardConfig-common.mk
--include vendor/google_devices/gs201/prebuilts/BoardConfigVendor.mk
 include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
--include vendor/google_devices/panther/proprietary/BoardConfigVendor.mk
 include device/google/pantah/sepolicy/panther-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk
 
