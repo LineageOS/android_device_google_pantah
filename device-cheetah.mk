@@ -51,9 +51,7 @@ include device/google/gs201/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/syna/syna0.mk
 
-ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
 include device/google/pantah/uwb/uwb_calibration.mk
-endif
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,cheetah)
@@ -321,11 +319,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
-else
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
-endif
 
 PRODUCT_PACKAGES += \
     UwbOverlayC10 \
