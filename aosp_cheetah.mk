@@ -27,9 +27,3 @@ PRODUCT_DEVICE := cheetah
 PRODUCT_MODEL := AOSP on Cheetah
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := Google
-
-# Keep the VNDK APEX in /system partition for REL branches as these branches are
-# expected to have stable API/ABI surfaces.
-ifneq (REL,$(PLATFORM_VERSION_CODENAME))
-  PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
-endif
