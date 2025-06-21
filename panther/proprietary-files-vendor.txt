@@ -9,7 +9,6 @@ vendor/bin/aocxd
 vendor/bin/bipchmgr
 vendor/bin/cbd
 vendor/bin/dmd
-vendor/bin/flood.control.hal
 vendor/bin/hw/android.hardware.authsecret-service.citadel
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service.goodix
 vendor/bin/hw/android.hardware.bluetooth-service.bcmbtlinux
@@ -202,7 +201,6 @@ vendor/etc/init/fingerprint-goodix.rc
 vendor/etc/init/google.hardware.media.c2@1.0-service.rc
 vendor/etc/init/hwc3-pixel.rc
 vendor/etc/init/init.camera.set-interrupts-ownership.rc
-vendor/etc/init/init.flood.control.rc
 vendor/etc/init/init.gps.rc
 vendor/etc/init/init.modem_logging_control.rc
 vendor/etc/init/init.shared_modem_platform_lassen.rc
@@ -261,7 +259,6 @@ vendor/etc/vintf/manifest/android.hardware.weaver-service.citadel.xml
 vendor/etc/vintf/manifest/com.google.edgetpu.tachyon-service.xml
 vendor/etc/vintf/manifest/dmd.xml
 vendor/etc/vintf/manifest/fingerprint-goodix.xml
-vendor/etc/vintf/manifest/flood_control.xml
 vendor/etc/vintf/manifest/hwc3-default.xml
 vendor/etc/vintf/manifest/manifest.xml
 vendor/etc/vintf/manifest/manifest_aocx.xml
