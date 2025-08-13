@@ -364,6 +364,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
+    persist.vendor.udfps.fps_touch_handler_supported=false \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 
 # Vibrator HAL
