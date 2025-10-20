@@ -1555,6 +1555,9 @@ framework/oat/arm/com.google.android.camera.experimental2022.vdex
 framework/oat/arm64/com.google.android.camera.experimental2022.odex
 framework/oat/arm64/com.google.android.camera.experimental2022.vdex
 
+# Rust
+lib64/libregex_automata.dylib.so
+
 # Completely skip files that are not required
 
 # Edge TPU
