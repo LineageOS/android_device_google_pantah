@@ -1,0 +1,32 @@
+binder_call(hal_face_default, camera_service_server)
+binder_call(hal_face_default, hal_graphics_allocator_default)
+binder_call(hal_face_default, stats_service_server)
+
+get_prop(hal_face_default, camera_config_prop)
+
+hal_client_domain(hal_face_default, hal_graphics_allocator)
+hal_client_domain(hal_face_default, hal_power)
+hal_client_domain(hal_face_default, hal_thermal)
+
+hal_server_domain(hal_face_default, hal_face_debug)
+
+perfetto_producer(hal_face_default)
+
+wakelock_use(hal_face_default)
+
+allow hal_face_default dmabuf_system_heap_device:chr_file { ioctl open read };
+allow hal_face_default edgetpu_device:chr_file { ioctl open read write };
+allow hal_face_default face_vendor_data_file:dir create_dir_perms;
+allow hal_face_default faceauth_heap_device:chr_file { ioctl open read };
+allow hal_face_default fwk_camera_hwservice:hwservice_manager find;
+allow hal_face_default fwk_camera_service:service_manager find;
+allow hal_face_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_face_default fwk_stats_hwservice:hwservice_manager find;
+allow hal_face_default fwk_stats_service:service_manager find;
+allow hal_face_default gxp_device:chr_file rw_file_perms;
+allow hal_face_default hal_graphics_mapper_hwservice:hwservice_manager find;
+allow hal_face_default hidl_token_hwservice:hwservice_manager find;
+allow hal_face_default mnt_vendor_file:dir search;
+allow hal_face_default system_app:fd use;
+allow hal_face_default tee_device:chr_file rw_file_perms;
+allow hal_face_default vndbinder_device:chr_file ioctl;

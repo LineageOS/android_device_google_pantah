@@ -1,0 +1,5 @@
+type sysfs_gps, fs_type, sysfs_type;
+type sysfs_gps_assert, fs_type, sysfs_type;
+type vendor_bt_data_file, data_file_type, file_type;
+type vendor_gps_file, data_file_type, file_type;
+type vendor_wlc_file, data_file_type, file_type;

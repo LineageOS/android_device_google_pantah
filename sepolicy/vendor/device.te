@@ -1,0 +1,2 @@
+type vendor_gnss_device, dev_type;
+type wb_coexistence_dev, dev_type;
