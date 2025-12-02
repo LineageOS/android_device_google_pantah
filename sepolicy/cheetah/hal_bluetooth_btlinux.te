@@ -1,3 +1,0 @@
-allow hal_bluetooth_btlinux vendor_bt_data_file:dir rw_dir_perms;
-allow hal_bluetooth_btlinux vendor_bt_data_file:file create_file_perms;
-

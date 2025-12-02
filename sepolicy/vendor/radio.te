@@ -1,0 +1,1 @@
+allow radio hal_exynos_rild_hwservice:hwservice_manager find;

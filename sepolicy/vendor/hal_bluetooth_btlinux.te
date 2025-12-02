@@ -1,0 +1,20 @@
+add_hwservice(hal_bluetooth_btlinux, hal_bluetooth_coexistence_hwservice)
+
+add_service(hal_bluetooth_btlinux, hal_bluetooth_coexistence_service)
+
+binder_call(hal_bluetooth_btlinux, hal_power_stats_default)
+binder_call(hal_bluetooth_btlinux, servicemanager)
+
+get_prop(hal_bluetooth_btlinux, boot_status_prop)
+
+vndbinder_use(hal_bluetooth_btlinux)
+
+allow hal_bluetooth_btlinux hal_power_stats_vendor_service:service_manager find;
+allow hal_bluetooth_btlinux hci_attach_dev:chr_file rw_file_perms;
+allow hal_bluetooth_btlinux proc_bluetooth_writable:file rw_file_perms;
+allow hal_bluetooth_btlinux sscoredump_vendor_data_crashinfo_file:dir create_dir_perms;
+allow hal_bluetooth_btlinux sscoredump_vendor_data_crashinfo_file:file create_file_perms;
+allow hal_bluetooth_btlinux sysfs_bluetooth_writable:file rw_file_perms;
+allow hal_bluetooth_btlinux vendor_bt_data_file:dir rw_dir_perms;
+allow hal_bluetooth_btlinux vendor_bt_data_file:file create_file_perms;
+allow hal_bluetooth_btlinux wb_coexistence_dev:chr_file rw_file_perms;

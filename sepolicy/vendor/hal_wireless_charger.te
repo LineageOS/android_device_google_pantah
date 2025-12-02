@@ -1,0 +1,17 @@
+type hal_wireless_charger_exec, exec_type, file_type, vendor_file_type;
+
+add_service(hal_wireless_charger, hal_wireless_charger_service)
+
+binder_call(hal_wireless_charger, hal_wlcservice)
+binder_call(hal_wireless_charger, platform_app)
+binder_call(hal_wireless_charger, servicemanager)
+binder_call(hal_wireless_charger, system_app)
+
+init_daemon_domain(hal_wireless_charger)
+
+r_dir_file(hal_wireless_charger, sysfs_batteryinfo)
+
+set_prop(hal_wireless_charger, vendor_wlcservice_prop)
+
+allow hal_wireless_charger self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow hal_wireless_charger sysfs_batteryinfo:file rw_file_perms;

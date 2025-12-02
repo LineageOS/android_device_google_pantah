@@ -1,0 +1,22 @@
+type hal_wlcservice, domain;
+type hal_wlcservice_exec, exec_type, file_type, vendor_file_type;
+type hal_wlcservice_service, hal_service_type, protected_service, service_manager_type;
+
+add_service(hal_wlcservice, hal_wlcservice_service)
+
+binder_call(hal_wlcservice, hal_health_default)
+binder_call(hal_wlcservice, hal_wireless_charger)
+binder_call(hal_wlcservice, servicemanager)
+
+binder_use(hal_wlcservice)
+
+hal_client_domain(hal_wlcservice, hal_health)
+
+init_daemon_domain(hal_wlcservice)
+
+set_prop(hal_wlcservice, vendor_wlcservice_prop)
+
+allow hal_wlcservice hal_wireless_charger_service:service_manager find;
+allow hal_wlcservice kmsg_device:chr_file { getattr w_file_perms };
+allow hal_wlcservice vendor_wlc_file:dir create_dir_perms;
+allow hal_wlcservice vendor_wlc_file:file create_file_perms;

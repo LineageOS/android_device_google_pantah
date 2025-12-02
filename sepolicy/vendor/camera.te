@@ -1,0 +1,1 @@
+binder_call(camera_service_server, hal_face_default)
