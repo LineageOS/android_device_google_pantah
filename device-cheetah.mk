@@ -21,9 +21,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.prebuilt.xml \
     android.hardware.bluetooth_le.prebuilt.xml
 
-DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
-
 # Touch
 PRODUCT_VENDOR_PROPERTIES += ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs
 
@@ -66,9 +63,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	android.hardware.nfc-service.st \
 	NfcOverlayCheetah
-
-# Shared Modem Platform
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/modem/modem_svc_sit/compatibility_matrix.xml
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -300,5 +294,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
 
-# Wireless charging
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/wireless_charger/compatibility_matrix.xml
+# VINTF
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/vintf/manifest.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/vintf/device_framework_matrix_product.xml

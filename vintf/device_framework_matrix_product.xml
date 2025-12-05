@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<compatibility-matrix version="9.0" type="framework">
+    <hal format="aidl">
+        <name>com.google.pixel.shared_modem_platform</name>
+        <version>3</version>
+        <interface>
+            <name>ISharedModemPlatform</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.google.bluetooth_ext</name>
+        <version>1-3</version>
+        <interface>
+            <name>IBTChannelAvoidance</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothCcc</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothCco</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothEwp</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothExt</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothFinder</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IBluetoothSar</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.google.wireless_charger</name>
+        <version>1-4</version>
+        <interface>
+            <name>IWirelessCharger</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.google.wireless_charger.service</name>
+        <version>1-2</version>
+        <interface>
+            <name>IWlcService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
