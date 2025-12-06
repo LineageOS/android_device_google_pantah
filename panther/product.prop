@@ -1,0 +1,35 @@
+# Bluetooth
+bluetooth.ble.allow_enc_with_bredr=true
+bluetooth.device_id.product_id=16649
+bluetooth.leaudio.dual_bidirection_swb.supported=false
+bluetooth.leaudio.toggle_visible_for_asha=false
+bluetooth.profile.bap.unicast.client.enabled?=true
+bluetooth.profile.ccp.server.enabled?=true
+bluetooth.profile.csip.set_coordinator.enabled?=true
+bluetooth.profile.hap.client.enabled?=true
+bluetooth.profile.hap.enabled_by_default=false
+bluetooth.profile.mcp.server.enabled?=true
+bluetooth.profile.vcp.controller.enabled?=true
+persist.bluetooth.a2dp_aac.vbr_supported=true
+persist.bluetooth.bqr.event_mask=94
+persist.bluetooth.firmware.selection=BCM.hcd
+persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630,WH-1000XM6,880066-0100
+persist.bluetooth.leaudio.notify.idle.during.call=true
+persist.bluetooth.leaudio_offload.disabled=false
+persist.bluetooth.opus.enabled=true
+ro.bluetooth.leaudio_offload.supported=true
+ro.bluetooth.leaudio_switcher.supported=true
+
+# Cutout
+ro.support_hide_display_cutout=true
+
+# EUICC
+euicc.seamless_transfer_enabled_in_non_qs=true
+
+# Google keyboard
+ro.com.google.ime.height_ratio=1.075
+ro.com.google.ime.kb_pad_port_b=8
+
+# Quick start
+ro.quick_start.device_id=panther
+ro.quick_start.oem_id=00e0
