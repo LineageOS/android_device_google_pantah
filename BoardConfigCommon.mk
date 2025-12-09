@@ -5,7 +5,7 @@
 #
 
 # Security - must be defined before including BoardConfig-common.mk
-BOOT_SECURITY_PATCH := 2025-10-05
+BOOT_SECURITY_PATCH := 2025-12-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 include device/google/gs201/BoardConfig-common.mk
