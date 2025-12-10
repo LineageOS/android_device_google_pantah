@@ -33,3 +33,6 @@ ro.com.google.ime.kb_pad_port_b=8
 # Quick start
 ro.quick_start.device_id=panther
 ro.quick_start.oem_id=00e0
+
+# Window extensions
+persist.settings.large_screen_opt.enabled=false

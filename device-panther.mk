@@ -65,10 +65,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Disable Settings large-screen optimization enabled by Window Extensions
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.settings.large_screen_opt.enabled=false
-
 # ANGLE - Almost Native Graphics Layer Engine
 PRODUCT_PACKAGES += \
     ANGLE
