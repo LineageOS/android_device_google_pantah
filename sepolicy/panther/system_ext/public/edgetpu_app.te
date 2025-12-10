@@ -1,0 +1,2 @@
+type edgetpu_app_server, coredomain, domain;
+type edgetpu_app_service, app_api_service, isolated_compute_allowed_service, service_manager_type;

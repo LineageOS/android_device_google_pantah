@@ -1,0 +1,3 @@
+user=_app isPrivApp=true name=com.google.android.grilservice domain=grilservice_app levelFrom=all
+user=_app isPrivApp=true name=com.shannon.rcsservice domain=vendor_rcs_app levelFrom=all
+user=_app isPrivApp=true name=com.shannon.rcsservice:shannonrcsservice domain=vendor_rcs_service_app levelFrom=all

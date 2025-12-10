@@ -4,6 +4,8 @@
 /data/vendor/wireless_charger(/.*)? u:object_r:vendor_wlc_file:s0
 /dev/bbd_control u:object_r:vendor_gnss_device:s0
 /dev/logbuffer_btlpm u:object_r:logbuffer_device:s0
+/dev/logbuffer_btwakelock0 u:object_r:logbuffer_device:s0
+/dev/logbuffer_btwakelock1 u:object_r:logbuffer_device:s0
 /dev/logbuffer_tty18 u:object_r:logbuffer_device:s0
 /dev/ttyBCM u:object_r:vendor_gnss_device:s0
 /dev/ttySAC16 u:object_r:hci_attach_dev:s0

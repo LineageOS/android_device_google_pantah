@@ -1,0 +1,19 @@
+type edgetpu_app_server_exec, exec_type, file_type, system_file_type;
+
+add_service(edgetpu_app_server, edgetpu_app_service)
+
+binder_call(edgetpu_app_server, system_server)
+
+binder_service(edgetpu_app_server)
+
+binder_use(edgetpu_app_server)
+
+init_daemon_domain(edgetpu_app_server)
+
+perfetto_producer(edgetpu_app_server)
+
+allow edgetpu_app_server fwk_stats_service:service_manager find;
+allow edgetpu_app_server package_native_service:service_manager find;
+allow edgetpu_app_server privapp_data_file:file { map read };
+allow edgetpu_app_server self:capability ipc_lock;
+allow edgetpu_app_server shell_data_file:file { map read };
