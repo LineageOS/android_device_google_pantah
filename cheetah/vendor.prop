@@ -11,9 +11,6 @@ ro.vendor.bluetooth.evb_bdaddr=22:22:22:33:44:55
 # DCK
 ro.gms.dck.eligible_wcc=3
 
-# Device family
-ro.build.device_family=P10C10L10
-
 # Display
 persist.vendor.display.primary.boot_config=1080x2340@120
 ro.surface_flinger.support_kernel_idle_timer=true
@@ -28,7 +25,7 @@ persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 ro.vendor.fingerprint.ta.name=g7.app
 
 # SVN
-ro.vendor.build.svn=84
+ro.vendor.build.svn=93
 
 # Touch
 ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs

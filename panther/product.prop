@@ -12,12 +12,16 @@ bluetooth.profile.mcp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 persist.bluetooth.bqr.event_mask=94
 persist.bluetooth.firmware.selection=BCM.hcd
-persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630,WH-1000XM6,880066-0100
+persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630,WH-1000XM6,880066-0100,LinkBuds Fit,WF-1000XM6
+persist.bluetooth.leaudio.allow_list_extend=LinkBuds Open
 persist.bluetooth.leaudio.notify.idle.during.call=true
 persist.bluetooth.leaudio_offload.disabled=false
 persist.bluetooth.opus.enabled=true
 ro.bluetooth.leaudio_offload.supported=true
 ro.bluetooth.leaudio_switcher.supported=true
+
+# Device family
+ro.build.device_family=P10C10L10
 
 # Google keyboard
 ro.com.google.ime.height_ratio=1.075

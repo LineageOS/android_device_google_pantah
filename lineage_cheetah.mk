@@ -14,17 +14,19 @@ VENDOR_PATH := vendor/google/cheetah
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 7 Pro
 PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_SYSTEM_BRAND := google
+PRODUCT_SYSTEM_MANUFACTURER := Google
+PRODUCT_SYSTEM_NAME := generic_system_google
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="cheetah-user 16 BP4A.251205.006 14401865 release-keys" \
-    BuildFingerprint=google/cheetah/cheetah:16/BP4A.251205.006/14401865:user/release-keys \
+    BuildDesc="cheetah-user 17 CP2A.260605.012 15430684 release-keys" \
+    BuildFingerprint=google/cheetah/cheetah:17/CP2A.260605.012/15430684:user/release-keys \
+    BuildSystemFingerprint=google/generic_system_google/generic:17/CP2A.260605.012/15430684:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)

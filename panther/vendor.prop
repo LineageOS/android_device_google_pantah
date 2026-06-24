@@ -11,9 +11,6 @@ ro.vendor.bluetooth.evb_bdaddr=22:22:22:33:44:55
 # DCK
 ro.gms.dck.eligible_wcc=2
 
-# Device family
-ro.build.device_family=P10C10L10
-
 # Display
 ro.surface_flinger.set_idle_timer_ms=1500
 vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=2
@@ -25,7 +22,7 @@ persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 ro.vendor.fingerprint.ta.name=g7.app
 
 # SVN
-ro.vendor.build.svn=84
+ro.vendor.build.svn=93
 
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
