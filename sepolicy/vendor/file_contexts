@@ -13,10 +13,11 @@
 /vendor/bin/android\.hardware\.biometrics\.face-service\.pixel u:object_r:hal_face_default_exec:s0
 /vendor/bin/dump/dump_bcmbt u:object_r:dump_bcmbt_exec:s0
 /vendor/bin/hw/android\.hardware\.gnss@[0-9]\.[0-9]-service-brcm u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/hw/android\.hardware\.vibrator-service\.cs40l26-rust u:object_r:hal_vibrator_default_exec:s0
 /vendor/bin/hw/gpsd u:object_r:gpsd_exec:s0
 /vendor/bin/hw/lhd u:object_r:lhd_exec:s0
 /vendor/bin/hw/scd u:object_r:scd_exec:s0
-/vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.dolby\.media\.c2-default-service u:object_r:mediacodec_exec:s0
 /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
 /vendor/bin/hw/vendor\.google\.wireless_charger\.service-default u:object_r:hal_wlcservice_exec:s0
 /vendor/bin/shared_modem_platform u:object_r:modem_svc_sit_exec:s0

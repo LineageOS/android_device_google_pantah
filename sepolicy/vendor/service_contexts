@@ -1,3 +1,4 @@
+android.hardware.media.c2.IComponentStore/default9 u:object_r:hal_codec2_service:s0
 com.google.face.debug.IDebugHost/default u:object_r:hal_face_debug_service:s0
 com.google.face.debug.IDebugManager/default u:object_r:hal_face_debug_service:s0
 com.google.pixel.shared_modem_platform.ISharedModemPlatform/default u:object_r:hal_shared_modem_platform_service:s0
@@ -8,4 +9,5 @@ vendor.google.bluetooth_ext.IBluetoothEwp/default u:object_r:hal_bluetooth_coexi
 vendor.google.bluetooth_ext.IBluetoothExt/default u:object_r:hal_bluetooth_coexistence_service:s0
 vendor.google.bluetooth_ext.IBluetoothFinder/default u:object_r:hal_bluetooth_coexistence_service:s0
 vendor.google.bluetooth_ext.IBluetoothSar/default u:object_r:hal_bluetooth_coexistence_service:s0
+vendor.google.hardware.biometrics.face.IFaceExt/default u:object_r:hal_face_ext_service:s0
 vendor.google.wireless_charger.service.IWlcService/default u:object_r:hal_wlcservice_service:s0

@@ -4,6 +4,8 @@ hal_client_domain(hal_face_default, hal_thermal)
 
 hal_server_domain(hal_face_default, hal_face_debug)
 
+add_service(hal_face_default, hal_face_ext_service)
+
 binder_call(camera_service_server, hal_face_default)
 binder_call(hal_face_default, camera_service_server)
 binder_call(hal_face_default, hal_graphics_allocator_default)
@@ -11,6 +13,7 @@ binder_call(hal_face_default, hal_graphics_composer_default)
 binder_call(hal_face_default, stats_service_server)
 
 get_prop(hal_face_default, camera_config_prop)
+get_prop(hal_face_default, device_config_faceauth_native_prop)
 
 perfetto_producer(hal_face_default)
 

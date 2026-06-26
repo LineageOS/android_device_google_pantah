@@ -7,7 +7,6 @@ add_service(hal_bluetooth_btlinux, hal_bluetooth_coexistence_service)
 
 binder_call(hal_bluetooth_btlinux, hal_power_stats_default)
 binder_call(hal_bluetooth_btlinux, servicemanager)
-binder_call(hal_bluetooth_btlinux, vendor_cccdktimesync_app)
 
 get_prop(hal_bluetooth_btlinux, boot_status_prop)
 

@@ -7,3 +7,5 @@ genfscon sysfs /devices/platform/bbd_pps/pps_assert u:object_r:sysfs_gps_assert:
 genfscon sysfs /devices/platform/odm/odm:btbcm/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/odm/odm:btbcm/rfkill/rfkill2/state u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/virtual/pps/pps0/assert_elapsed u:object_r:sysfs_gps_assert:s0
+genfscon sysfs /module/cl_dsp_core/version u:object_r:sysfs_vibrator:s0
+genfscon sysfs /module/cs40l26_core/version u:object_r:sysfs_vibrator:s0
