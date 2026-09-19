@@ -24,6 +24,9 @@ ro.vendor.fingerprint.ta.name=g7.app
 # SVN
 ro.vendor.build.svn=94
 
+# USB
+vendor.usb.device=11210000.usb
+
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
 persist.vendor.vibrator.hal.context.cooldowntime=1600

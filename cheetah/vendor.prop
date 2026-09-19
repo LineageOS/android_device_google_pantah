@@ -30,6 +30,9 @@ ro.vendor.build.svn=94
 # Touch
 ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs
 
+# USB
+vendor.usb.device=11210000.usb
+
 # UWB
 ro.vendor.uwb.calibration.calibrationpaths=/vendor/etc/uwb/calib_paths
 
