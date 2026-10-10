@@ -25,7 +25,7 @@ persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 ro.vendor.fingerprint.ta.name=g7.app
 
 # SVN
-ro.vendor.build.svn=94
+ro.vendor.build.svn=95
 
 # Touch
 ro.vendor.touch.dump.sys=/sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs
