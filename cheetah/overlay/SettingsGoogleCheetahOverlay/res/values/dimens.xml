@@ -6,4 +6,7 @@
 <resources>
     <!-- Fingerprint -->
     <dimen name="udfps_lottie_translate_y">-500dp</dimen>
+
+    <!-- Face -->
+    <dimen name="face_enroll_intro_illustration_margin_bottom">-15dp</dimen>
 </resources>
